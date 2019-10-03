@@ -16,6 +16,13 @@ public class MovieApp {
     public MovieApp() {
     }
 
+    public MovieApp(String id, String title, String genre, String language) {
+        this.id = id;
+        this.title = title;
+        this.genre = genre;
+        this.language = language;
+    }
+
     public String getId() {
         return id;
     }
