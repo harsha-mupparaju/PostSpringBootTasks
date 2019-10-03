@@ -37,15 +37,25 @@ public class MovieAppServiceImpl implements MovieAppService {
         return true;
     }
         return false;
-    }
+   }
 //
 //    @Override
 //    public MovieApp getMovieByName(String movieName) {
-//
-//
-//
-//
+//        return null;
 //    }
+//
+    @Override
+    public MovieApp getMovieByName(String movieName) {
+      MovieApp movie=new MovieApp();
+//       if(movieAppRepository.findByMovieTitle(movieName)==movie.getTitle()){
+
+    Optional<MovieApp> movie1= movieAppRepository.findByMovieTitle(movieName);
+    if(movie1.isPresent()){
+        movie=movie1.get();
+     return movie;
+    }else
+        return null;
+    }
 
     @Override
     public MovieApp updateMovie(MovieApp movie) {

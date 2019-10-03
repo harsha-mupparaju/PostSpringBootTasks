@@ -3,9 +3,9 @@ package com.stackroute.controller;
 
 import com.stackroute.domain.MovieApp;
 import com.stackroute.service.MovieAppService;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,9 +33,14 @@ public class MovieAppcontroller {
         return responseEntity;
     }
 
-    @GetMapping("movie")
+    @GetMapping("allMovies")
     public ResponseEntity<?> getAllMovies() {
         return new ResponseEntity<List<MovieApp>>(movieAppService.getAllMovies(), HttpStatus.OK);
+    }
+
+    @GetMapping("movie")
+    public ResponseEntity<?> searchByMovieName(@RequestBody String movieName){
+        return new ResponseEntity(movieAppService.getMovieByName(movieName),HttpStatus.OK);
     }
 
 
