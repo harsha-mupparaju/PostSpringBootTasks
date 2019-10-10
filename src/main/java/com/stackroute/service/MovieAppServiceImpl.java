@@ -7,15 +7,29 @@ import com.stackroute.exceptions.MovieAlreadyExistsException;
 import com.stackroute.exceptions.MovieNotFoundException;
 import com.stackroute.repository.MovieAppRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class MovieAppServiceImpl implements MovieAppService {
+public class MovieAppServiceImpl implements MovieAppService, ApplicationListener<ContextRefreshedEvent>, CommandLineRunner {
 
     MovieAppRepository movieAppRepository;
+
+    @Value("${movie.id}")
+    private String id;
+    @Value("${movie.title}")
+    private String title;
+    @Value("${movie.genre}")
+    private String genre;
+    @Value("${movie.language}")
+    private String language;
+
 
     @Autowired
     public MovieAppServiceImpl(MovieAppRepository movieAppRepository) {
@@ -91,6 +105,17 @@ public class MovieAppServiceImpl implements MovieAppService {
             throw new MovieNotFoundException("Nothing to update");
 
     }
+
+    @Override
+    public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
+        movieAppRepository.save(new MovieApp(id,title,genre,language));
+
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        movieAppRepository.save(new MovieApp(id,title,genre,language));
+        }
 }
 
 

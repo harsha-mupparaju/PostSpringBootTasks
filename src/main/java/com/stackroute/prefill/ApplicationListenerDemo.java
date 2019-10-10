@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class ApplicationListenerDemo implements ApplicationListener<ContextRefreshedEvent> {
 
+
+
      @Autowired
     private MovieAppRepository movieAppRepository;
     @Override
@@ -19,9 +21,9 @@ public class ApplicationListenerDemo implements ApplicationListener<ContextRefre
 
     }
     private void seedData(){
-     movieAppRepository.save(new MovieApp("1","Piku","drama","hindi"));
-     movieAppRepository.save(new MovieApp("2","Avengers:Infinity-War","Action,Fantasy","English"));
-     movieAppRepository.save(new MovieApp("3","Badla","Thriller","hindi"));
-     movieAppRepository.save(new MovieApp("4","Syera","Drama","Telugu"));
+//     movieAppRepository.save(new MovieApp("1","Piku","drama","hindi"));
+//     movieAppRepository.save(new MovieApp("2","Avengers:Infinity-War","Action,Fantasy","English"));
+//     movieAppRepository.save(new MovieApp("3","Badla","Thriller","hindi"));
+//     movieAppRepository.save(new MovieApp("4","Syera","Drama","Telugu"));
     }
 }
