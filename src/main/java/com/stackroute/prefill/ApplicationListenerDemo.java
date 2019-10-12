@@ -21,9 +21,6 @@ public class ApplicationListenerDemo implements ApplicationListener<ContextRefre
 
     }
     private void seedData(){
-//     movieAppRepository.save(new MovieApp("1","Piku","drama","hindi"));
-//     movieAppRepository.save(new MovieApp("2","Avengers:Infinity-War","Action,Fantasy","English"));
-//     movieAppRepository.save(new MovieApp("3","Badla","Thriller","hindi"));
-//     movieAppRepository.save(new MovieApp("4","Syera","Drama","Telugu"));
+
     }
 }
