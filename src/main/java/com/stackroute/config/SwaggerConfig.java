@@ -22,8 +22,6 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("com.stackroute"))
                 .paths(PathSelectors.any())
                 .build();
-//                .apis(RequestHandlerSelectors.any())
-//                .paths(PathSelectors.any())
 
     }
 
