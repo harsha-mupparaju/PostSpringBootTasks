@@ -90,7 +90,7 @@ public class MovieAppServiceImpl implements MovieAppService, ApplicationListener
     @Override
     public MovieApp getMovieByName(String movieName) throws MovieNotFoundException {
         MovieApp movie = new MovieApp();
-//       if(movieAppRepository.findByMovieTitle(movieName)==movie.getTitle()){
+
         Optional<MovieApp> movie1 = movieAppRepository.findByMovieTitle(movieName);
         if (movie1.isPresent()) {
             movie = movie1.get();
@@ -117,8 +117,7 @@ public class MovieAppServiceImpl implements MovieAppService, ApplicationListener
     }
 
     @Override
-    public void run(String... args) throws Exception {
-//        movieAppRepository.save(new MovieApp(id,title,genre,language));
+    public void run(String... args) throws Exception 
         }
 }
 
