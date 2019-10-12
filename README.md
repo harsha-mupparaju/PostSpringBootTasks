@@ -25,7 +25,9 @@ Environment.html)
 @Qualifier annotations to specify which implementation to use.
 11. Use @Profile to run the application with the existing service implementation, and the new
 TrackDummyServiceImpl implementation.
+  
 12. Swap in-memory H2 database with MySQL.
+  
 13. Create two additional properties file application-dev.properties that contains configuration for
 H2 and application-prod.properties that contains configurations for MySQL.
 Task 14: Use spring developer tool and verify that changes are getting reflected without the need of restarting the server
