@@ -9,15 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 
 public class MovieAppApplication {
-//	@Value("${message}")
-//	private String message;
 
 	public static void main(String[] args) {
 		SpringApplication.run(MovieAppApplication.class, args);
 	}
 
-//	@RequestMapping("hello")
-//	String home(){
-//		return message;
+
 
 }
